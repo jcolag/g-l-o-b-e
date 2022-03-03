@@ -1,0 +1,59 @@
+:root {
+  --background: white;
+  --neutral: gray;
+  --foreground: black;
+  --error: red;
+}
+
+body {
+  background-color: var(--background);
+  display: grid;
+  font-size: 1.25em;
+  justify-content: center;
+  text-align: center;
+}
+
+h1 {
+  color: var(--neutral);
+  font-style: italic;
+}
+
+svg {
+  height: 15em;
+}
+
+path {
+  fill: var(--foreground);
+}
+
+.update {
+  height: 1.5em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+.names {
+  float: left;
+  width: 66%;
+}
+
+.distance {
+  float: left;
+  width: calc(33% - 1.5em);
+}
+
+.direction {
+  float: left;
+  width: 1.5em;
+}
+
+.error {
+  color: var(--error);
+  text-shadow: var(--neutral) 1px 1px 3px;
+}
+
+.hidden {
+  display: none;
+}
+
