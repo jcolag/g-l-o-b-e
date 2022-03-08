@@ -51,9 +51,13 @@ function handleInput(event) {
     input.classList.add('hidden');
   }
 
-  guesses.innerHTML += `<div class="update"><div class="names">${name}` +
-    ` ${guess[0].emoji}</div><div class="distance">${miles}mi</div><div ` +
-    `class="direction">${arrow}</div></div>`;
+  updateTravel(whichCountry);
+  guesses.innerHTML += '<div class="update">' +
+    `<div class="names">${name}</div>` +
+    `<div class="flag">${guess[0].emoji}</div>` +
+    `<div class="distance">${miles}mi</div>` +
+    `<div class="direction">${arrow}</div>` +
+    '</div>';
   input.value = '';
 }
 

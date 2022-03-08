@@ -38,9 +38,14 @@ path {
   width: 66%;
 }
 
+.flag {
+  float: left;
+  width: 1.5em;
+}
+
 .distance {
   float: left;
-  width: calc(33% - 1.5em);
+  width: calc(33% - 3em);
 }
 
 .direction {
