@@ -35,7 +35,7 @@ path {
 
 .names {
   float: left;
-  width: 66%;
+  width: 33%;
 }
 
 .flag {
@@ -51,6 +51,11 @@ path {
 .direction {
   float: left;
   width: 1.5em;
+}
+
+.total-distance {
+  float: left;
+  width: 33%;
 }
 
 .error {

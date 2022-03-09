@@ -1,3 +1,8 @@
+const earth = 24859.734;
+let previousCountry = -1;
+let distanceSoFar = 0;
+let dclass = '';
+
 window.addEventListener('load', (e) => {
   const input = document.getElementById('user-guess');
   input.addEventListener('input', handleKey);
@@ -41,6 +46,7 @@ function handleInput(event) {
   }
 
   const name = guess[0].translations[lang];
+  const whichCountry = countries.indexOf(guess[0]);
   const distance = getDistanceBetweenCountries(target, guess[0]);
   const miles = Math.trunc(distance * 100 / 1.609344 + 0.5) / 100;
   const bearing = getDirectionBetweenCountries(target, guess[0]);
@@ -57,6 +63,7 @@ function handleInput(event) {
     `<div class="flag">${guess[0].emoji}</div>` +
     `<div class="distance">${miles}mi</div>` +
     `<div class="direction">${arrow}</div>` +
+    `<div class="total-distance ${dclass}">${distanceSoFar}mi traveled</div>` +
     '</div>';
   input.value = '';
 }
@@ -125,3 +132,17 @@ function deg2rad(deg) {
   return deg * (Math.PI/180)
 }
 
+function updateTravel(countryId) {
+  if (previousCountry < 0) {
+    previousCountry = countryId;
+    return;
+  }
+
+  const distance = getDistanceBetweenCountries(
+    countries[previousCountry],
+    countries[countryId]
+  );
+  const miles = Math.trunc(distance * 100 / 1.609344 + 0.5) / 100;
+  distanceSoFar += miles;
+  previousCountry = countryId;
+}
