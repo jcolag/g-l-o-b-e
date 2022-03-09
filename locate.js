@@ -144,5 +144,16 @@ function updateTravel(countryId) {
   );
   const miles = Math.trunc(distance * 100 / 1.609344 + 0.5) / 100;
   distanceSoFar += miles;
+
+  if (distanceSoFar / earth < 0.34) {
+    dclass = 'status-good';
+  } else if (distanceSoFar / earth < 0.67) {
+    dclass = 'status-ok';
+  } else if (distanceSoFar / earth < 1) {
+    dclass = 'status-worry';
+  } else {
+    dclass = 'status-fail';
+  }
+
   previousCountry = countryId;
 }
