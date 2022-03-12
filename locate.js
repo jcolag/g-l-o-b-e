@@ -143,7 +143,7 @@ function updateTravel(countryId) {
     countries[countryId]
   );
   const miles = Math.trunc(distance * 100 / 1.609344 + 0.5) / 100;
-  distanceSoFar += miles;
+  distanceSoFar = Math.trunc(100 * (distanceSoFar + miles)) / 100;
 
   if (distanceSoFar / earth < 0.34) {
     dclass = 'status-good';

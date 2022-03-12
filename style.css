@@ -3,6 +3,9 @@
   --neutral: gray;
   --foreground: black;
   --error: red;
+  --good: #7dc596;
+  --ok:  #c5ba7d;
+  --bad: #c4d9e5;
 }
 
 body {
