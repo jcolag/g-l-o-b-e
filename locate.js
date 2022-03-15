@@ -1,7 +1,12 @@
 const earth = 24859.734;
+const detective = '🕵️';
+const zwj = '\u200D';
+const skin = '🏻🏼🏽🏾🏿';
+const gender = '♀️♂️';
 let previousCountry = -1;
 let distanceSoFar = 0;
 let dclass = '';
+let lostGame = false;
 
 window.addEventListener('load', (e) => {
   const input = document.getElementById('user-guess');
@@ -58,6 +63,14 @@ function handleInput(event) {
   }
 
   updateTravel(whichCountry);
+  if (distanceSoFar > earth && !lostGame) {
+    lostGame = true;
+    guesses.innerHTML += '<div class="update">' +
+      enemy() +
+      ' The E.N.E.M.Y. agent found the artifact before you did,' +
+      ' but keep playing to find out where.';
+  }
+
   guesses.innerHTML += '<div class="update">' +
     `<div class="names">${name}</div>` +
     `<div class="flag">${guess[0].emoji}</div>` +
@@ -156,4 +169,14 @@ function updateTravel(countryId) {
   }
 
   previousCountry = countryId;
+}
+
+function enemy() {
+  const s = Math.floor(Math.random() * (skin.length + 1) / 2);
+  const g = Math.floor(Math.random() * (gender.length + 1));
+
+  return detective +
+    (s === skin.length ? '' : (skin[s * 2] + skin[s * 2 + 1])) +
+    (g === gender.length ? '' : (zwj + gender[g])) +
+    '\uFE0F';
 }
