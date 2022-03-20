@@ -1,8 +1,8 @@
 const earth = 24859.734;
 const detective = '🕵️';
 const zwj = '\u200D';
-const skin = '🏻🏼🏽🏾🏿';
-const gender = '♀️♂️';
+const skin = [ '🏻', '🏼', '🏽', '🏾', '🏿' ];
+const gender = [ '♀️', '♂️' ];
 let previousCountry = -1;
 let distanceSoFar = 0;
 let dclass = '';
@@ -172,11 +172,11 @@ function updateTravel(countryId) {
 }
 
 function enemy() {
-  const s = Math.floor(Math.random() * (skin.length + 1) / 2);
+  const s = Math.floor(Math.random() * (skin.length + 1));
   const g = Math.floor(Math.random() * (gender.length + 1));
 
   return detective +
-    (s === skin.length ? '' : (skin[s * 2] + skin[s * 2 + 1])) +
+    (s === skin.length ? '' : skin[s]) +
     (g === gender.length ? '' : (zwj + gender[g])) +
     '\uFE0F';
 }
