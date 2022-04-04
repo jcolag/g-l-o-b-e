@@ -61,6 +61,26 @@ path {
   width: 33%;
 }
 
+.status-good {
+  color: var(--good);
+  text-shadow: var(--foreground) 1px 1px 3px;
+}
+
+.status-ok {
+  color: var(--ok);
+  text-shadow: var(--foreground) 1px 1px 3px;
+}
+
+.status-worry {
+  color: var(--error);
+  text-shadow: var(--foreground) 1px 1px 3px;
+}
+
+.status-fail {
+  color: var(--bad);
+  text-shadow: var(--neutral) 1px 1px 3px;
+}
+
 .error {
   color: var(--error);
   text-shadow: var(--neutral) 1px 1px 3px;
