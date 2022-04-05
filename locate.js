@@ -12,6 +12,7 @@ window.addEventListener('load', (e) => {
   const input = document.getElementById('user-guess');
   input.addEventListener('input', handleKey);
   input.addEventListener('keypress', handleInput);
+  document.getElementById('user-guess').focus();
 });
 
 function handleKey(event) {
