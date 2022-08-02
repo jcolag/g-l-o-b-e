@@ -21,7 +21,7 @@ h1 {
   font-style: italic;
 }
 
-svg {
+svg, #country-svg {
   height: 15em;
 }
 
@@ -91,5 +91,9 @@ path {
 
 .hidden {
   display: none;
+}
+
+#guesses {
+  width: 80vw;
 }
 
