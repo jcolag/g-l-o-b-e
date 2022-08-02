@@ -181,3 +181,11 @@ function enemy() {
     (g === gender.length ? '' : (zwj + gender[g])) +
     '\uFE0F';
 }
+function params() {
+  var p = {};
+  var parts = window.location.href
+    .replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,k,v) {
+      p[k] = v;
+    });
+  return p;
+}
