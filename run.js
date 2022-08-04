@@ -3,17 +3,47 @@ const detective = '🕵️';
 const zwj = '\u200D';
 const skin = [ '🏻', '🏼', '🏽', '🏾', '🏿' ];
 const gender = [ '♀️', '♂️' ];
+let countries = {};
+let mapping = {};
 let previousCountry = -1;
 let distanceSoFar = 0;
 let dclass = '';
 let lostGame = false;
+let targetCountry = -1;
+let lang = 'en';
 
 window.addEventListener('load', (e) => {
+  fetch('./countries.json')
+    .then(readJson);
+});
+
+function readJson(response) {
+  response.arrayBuffer()
+    .then(startGame);
+}
+
+function startGame(jsonBytes) {
   const input = document.getElementById('user-guess');
+  const border = document.getElementById('country-svg');
+  const decoder = new TextDecoder('utf-8');
+  const json = decoder.decode(jsonBytes);
+  countries = JSON.parse(json);
+  targetCountry = Math.floor(random() * countries.length);
+  border.src = './maps/'
+    + countries[targetCountry].iso2.toLowerCase()
+    + '.svg';
   input.addEventListener('input', handleKey);
   input.addEventListener('keypress', handleInput);
   document.getElementById('user-guess').focus();
-});
+  mapping = countries
+    .map((c) => ({
+      emoji: c.emoji,
+      iso: c.iso2,
+      latitude: c.latitude,
+      longitude: c.longitude,
+      translations: Object.assign(c.translations, { en: c.name }),
+    }));
+}
 
 function handleKey(event) {
   const input = document.getElementById('user-guess');
