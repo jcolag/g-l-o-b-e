@@ -3,6 +3,8 @@ const detective = '🕵️';
 const zwj = '\u200D';
 const skin = [ '🏻', '🏼', '🏽', '🏾', '🏿' ];
 const gender = [ '♀️', '♂️' ];
+const seed = cyrb128(when.toDateString());
+const random = sfc32(seed[0], seed[1], seed[2], seed[3]);
 let countries = {};
 let mapping = {};
 let previousCountry = -1;
@@ -203,8 +205,8 @@ function updateTravel(countryId) {
 }
 
 function enemy() {
-  const s = Math.floor(Math.random() * (skin.length + 1));
-  const g = Math.floor(Math.random() * (gender.length + 1));
+  const s = Math.floor(random() * (skin.length + 1));
+  const g = Math.floor(random() * (gender.length + 1));
 
   return detective +
     (s === skin.length ? '' : skin[s]) +
