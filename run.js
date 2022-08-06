@@ -3,6 +3,16 @@ const detective = '🕵️';
 const zwj = '\u200D';
 const skin = [ '🏻', '🏼', '🏽', '🏾', '🏿' ];
 const gender = [ '♀️', '♂️' ];
+const query = params();
+let when = Object.prototype.hasOwnProperty.call(query, 'date')
+  && !Number.isNaN(Date.parse(query['date']))
+    ? new Date(params()['date'])
+    : new Date();
+
+if (Math.abs(Date.now() - when.valueOf()) > 10000) {
+  when = new Date(when.setMinutes(when.getTimezoneOffset()));
+}
+
 const seed = cyrb128(when.toDateString());
 const random = sfc32(seed[0], seed[1], seed[2], seed[3]);
 let countries = {};
