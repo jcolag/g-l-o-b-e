@@ -9,7 +9,9 @@ let when = Object.prototype.hasOwnProperty.call(query, 'date')
     ? new Date(params()['date'])
     : new Date();
 
-if (Math.abs(Date.now() - when.valueOf()) > 10000) {
+if (when > new Date()) {
+  when = new Date();
+} else if (Math.abs(Date.now() - when.valueOf()) > 10000) {
   when = new Date(when.setMinutes(when.getTimezoneOffset()));
 }
 
