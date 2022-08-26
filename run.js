@@ -4,9 +4,12 @@ const zwj = '\u200D';
 const skin = [ '🏻', '🏼', '🏽', '🏾', '🏿' ];
 const gender = [ '♀️', '♂️' ];
 const query = params();
+let lang = Object.prototype.hasOwnProperty.call(query, 'lang')
+  ? query['lang']
+  : 'en';
 let when = Object.prototype.hasOwnProperty.call(query, 'date')
   && !Number.isNaN(Date.parse(query['date']))
-    ? new Date(params()['date'])
+    ? new Date(query['date'])
     : new Date();
 
 if (when > new Date()) {
@@ -24,7 +27,6 @@ let distanceSoFar = 0;
 let dclass = '';
 let lostGame = false;
 let targetCountry = -1;
-let lang = 'en';
 
 window.addEventListener('load', (e) => {
   fetch('./countries.json')
