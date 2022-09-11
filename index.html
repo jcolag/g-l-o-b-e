@@ -28,6 +28,22 @@
   <footer>
     If you'd like more, you might want to look through the
     <a href="https://jcolag.github.io/g-l-o-b-e-archives">archived games</a>.
+    <button id="config">⚙ Options</button>
   </footer>
+  <div class="modal hidden-modal" id="config-modal">
+    <h1>Configuration</h1>
+    <p>
+      <button id="reset-token" onclick="updateGame()">New Game</button>
+      <br>
+      Abandon the existing game and replace with something random on
+      reload, by clicking this button.  Note that the game will reset
+      at midnight, so avoid reloading the page, if you&rsquo;re near
+      that point.
+    </p>
+    <hr>
+    <p>
+      <button id="close-config">👍 Looks good</button>
+    </p>
+  </div>
 </body>
 </html>
