@@ -38,6 +38,16 @@ let lostGame = false;
 let targetCountry = -1;
 
 window.addEventListener('load', (e) => {
+  const config = document.getElementById('config-modal');
+  const openConfig = document.getElementById('config');
+  const closeConfig = document.getElementById('close-config');
+
+  openConfig.addEventListener(
+    'click', () => config.classList.remove('hidden-modal')
+  );
+  closeConfig.addEventListener(
+    'click', () => config.classList.add('hidden-modal')
+  );
   fetch('./countries.json')
     .then(readJson);
 });
