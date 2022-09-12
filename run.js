@@ -5,6 +5,7 @@ const skin = [ '🏻', '🏼', '🏽', '🏾', '🏿' ];
 const gender = [ '♀️', '♂️' ];
 const query = params();
 const storedSeed = localStorage.getItem('seed');
+let needRestart = false;
 let lang = Object.prototype.hasOwnProperty.call(query, 'lang')
   ? query['lang']
   : 'en';
@@ -46,7 +47,12 @@ window.addEventListener('load', (e) => {
     'click', () => config.classList.remove('hidden-modal')
   );
   closeConfig.addEventListener(
-    'click', () => config.classList.add('hidden-modal')
+    'click', () => {
+      config.classList.add('hidden-modal');
+      if (needRestart) {
+        window.location.reload();
+      }
+    }
   );
   fetch('./countries.json')
     .then(readJson);
@@ -298,5 +304,5 @@ function sfc32(a, b, c, d) {
 
 function updateGame() {
   localStorage.setItem('seed', Date.now().toString());
-  window.location.reload();
+  needRestart = true;
 }
