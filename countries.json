@@ -1416,7 +1416,11 @@
             "de": "Bonaire, Sint Eustatius und Saba",
             "fr": "Bonaire, Saint-Eustache et Saba",
             "it": "Bonaire, Saint-Eustache e Saba",
-            "cn": "博内尔岛、圣尤斯特歇斯和萨巴岛"
+            "cn": "博内尔岛、圣尤斯特歇斯和萨巴岛",
+            "es": "Bonaire, San Eustaquio y Saba",
+            "hr": "Bonaire, Sint Eustatius és Saba",
+            "ja": "ボネール、シント・ユースタティウス、サバ",
+            "nl": "Bonaire, Sint Eustatius en Saba"
         },
         "latitude": "12.15000000",
         "longitude": "-68.26666700",
@@ -2975,7 +2979,10 @@
             "de": "Curaçao",
             "fr": "Curaçao",
             "it": "Curaçao",
-            "cn": "库拉索"
+            "cn": "库拉索",
+            "es": "Curacao",
+            "hr": "Curaçao",
+            "ja": "キュラソー"
         },
         "latitude": "12.11666700",
         "longitude": "-68.93333300",
@@ -5122,7 +5129,8 @@
             "es": "Iran",
             "fr": "Iran",
             "ja": "イラン・イスラム共和国",
-            "cn": "伊朗"
+            "cn": "伊朗",
+            "it": "Iran"
         },
         "latitude": "32.00000000",
         "longitude": "53.00000000",
@@ -5684,7 +5692,17 @@
         ],
         "translations": {
             "kr": "코소보",
-            "cn": "科索沃"
+            "cn": "科索沃",
+            "br": "Kosovo",
+            "de": "Kosovo",
+            "es": "Kosovo",
+            "fa": "کوزوو",
+            "fr": "Kosovo",
+            "hr": "Koszovó",
+            "it": "Kosovo",
+            "ja": "コソボ",
+            "nl": "Kosovo",
+            "pt": "Kosovo"
         },
         "latitude": "42.56129090",
         "longitude": "20.34030350",
@@ -9615,7 +9633,10 @@
             "de": "Sint Maarten (niederl. Teil)",
             "fr": "Saint Martin (partie néerlandaise)",
             "it": "Saint Martin (parte olandese)",
-            "cn": "圣马丁岛（荷兰部分）"
+            "cn": "圣马丁岛（荷兰部分）",
+            "es": "Sint Maarten (parte holandesa)",
+            "hr": "Sint Maarten (holland rész)",
+            "ja": "シント・マールテン (オランダ語)"
         },
         "latitude": "18.03333300",
         "longitude": "-63.05000000",
@@ -11709,7 +11730,8 @@
             "fr": "Îles Vierges britanniques",
             "ja": "イギリス領ヴァージン諸島",
             "it": "Isole Vergini Britanniche",
-            "cn": "圣文森特和格林纳丁斯"
+            "cn": "圣文森特和格林纳丁斯",
+            "hr": "Brit Virgin szigetek"
         },
         "latitude": "18.43138300",
         "longitude": "-64.62305000",
@@ -11751,7 +11773,8 @@
             "fr": "Îles Vierges des États-Unis",
             "ja": "アメリカ領ヴァージン諸島",
             "it": "Isole Vergini americane",
-            "cn": "维尔京群岛（美国）"
+            "cn": "维尔京群岛（美国）",
+            "hr": "Egyesült Államok Virgin-szigetek"
         },
         "latitude": "18.34000000",
         "longitude": "-64.93000000",
