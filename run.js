@@ -302,7 +302,12 @@ function sfc32(a, b, c, d) {
   }
 }
 
-function updateGame() {
-  localStorage.setItem('seed', Date.now().toString());
+function setSeed(seed) {
+  localStorage.setItem('seed', seed);
+  localStorage.setItem('seedSet', Math.floor(Date.now() / 86400000));
   needRestart = true;
+}
+
+function updateGame() {
+  setSeed(Date.now().toString());
 }
