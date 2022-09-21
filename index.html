@@ -31,6 +31,14 @@
   <div class="modal hidden-modal" id="config-modal">
     <h1>Configuration</h1>
     <p>
+      Game for specific date:
+      <input id="target-game" onchange="dateSet()" type="date">
+      <br>
+      You can try a variety of historical games, by choosing a date
+      earlier than today.
+    </p>
+    <hr>
+    <p>
       <button id="reset-token" onclick="updateGame()">New Game</button>
       <br>
       Abandon the existing game and replace with something random on
