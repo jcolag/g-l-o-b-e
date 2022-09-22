@@ -4,7 +4,9 @@ const zwj = '\u200D';
 const skin = [ '🏻', '🏼', '🏽', '🏾', '🏿' ];
 const gender = [ '♀️', '♂️' ];
 const query = params();
+const day = Math.floor(Date.now() / 86400000);
 const storedSeed = localStorage.getItem('seed');
+const seedSet = localStorage.getItem('seedSet');
 let needRestart = false;
 let lang = Object.prototype.hasOwnProperty.call(query, 'lang')
   ? query['lang']
@@ -22,8 +24,13 @@ if (when > new Date()) {
 
 when = when.toDateString();
 if (storedSeed !== null) {
-  const stext = new Date(Number(storedSeed)).toString();
-  if (stext.indexOf(when) >= 0) {
+  let stext = storedSeed;
+
+  if (Number(seedSet) === day) {
+    if (storedSeed.indexOf(':') >= 0) {
+      stext = new Date(Number(storedSeed)).toString();
+    }
+
     when = stext;
   }
 }
