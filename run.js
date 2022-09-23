@@ -49,7 +49,10 @@ window.addEventListener('load', (e) => {
   const config = document.getElementById('config-modal');
   const openConfig = document.getElementById('config');
   const closeConfig = document.getElementById('close-config');
+  const datePick = document.getElementById('target-game');
+  const today = new Date().toISOString().split('T')[0];
 
+  datePick.max = today;
   openConfig.addEventListener(
     'click', () => config.classList.remove('hidden-modal')
   );
