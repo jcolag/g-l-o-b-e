@@ -318,6 +318,14 @@ function setSeed(seed) {
   needRestart = true;
 }
 
+function dateSet() {
+  const datePick = document.getElementById('target-game');
+  const newDate = new Date(datePick.value);
+  const when = new Date(newDate.setMinutes(newDate.getTimezoneOffset()));
+
+  setSeed(when.toDateString());
+}
+
 function updateGame() {
   setSeed(Date.now().toString());
 }
