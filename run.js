@@ -332,3 +332,10 @@ function dateSet() {
 function updateGame() {
   setSeed(Date.now().toString());
 }
+
+function updateLanguage() {
+  const langPick = document.getElementById('language-select');
+  const lang = langPick.value;
+  localStorage.setItem('langSet', lang);
+  needRestart = true;
+}
