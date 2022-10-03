@@ -7,14 +7,17 @@ const query = params();
 const day = Math.floor(Date.now() / 86400000);
 const storedSeed = localStorage.getItem('seed');
 const seedSet = localStorage.getItem('seedSet');
+const langSet = localStorage.getItem('langSet');
 let needRestart = false;
-let lang = Object.prototype.hasOwnProperty.call(query, 'lang')
-  ? query['lang']
-  : 'en';
+let lang = langSet === null ? 'en' : langSet;
 let when = Object.prototype.hasOwnProperty.call(query, 'date')
   && !Number.isNaN(Date.parse(query['date']))
     ? new Date(query['date'])
     : new Date();
+
+if (Object.prototype.hasOwnProperty.call(query, 'lang')) {
+  lang = query['lang'];
+}
 
 if (when > new Date()) {
   when = new Date();
