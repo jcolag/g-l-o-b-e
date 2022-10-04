@@ -53,8 +53,10 @@ window.addEventListener('load', (e) => {
   const openConfig = document.getElementById('config');
   const closeConfig = document.getElementById('close-config');
   const datePick = document.getElementById('target-game');
+  const langPick = document.getElementById('language-select');
   const today = new Date().toISOString().split('T')[0];
 
+  langPick.value = lang;
   datePick.max = today;
   openConfig.addEventListener(
     'click', () => config.classList.remove('hidden-modal')
