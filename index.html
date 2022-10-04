@@ -31,6 +31,29 @@
   <div class="modal hidden-modal" id="config-modal">
     <h1>Configuration</h1>
     <p>
+      <label for="language-select">Choose a language:</label>
+      <select id="language-select" name="languages" onchange="updateLanguage()">
+        <option disabled="true" value="">-- Choose a language --"</option>
+        <option value="br">Breton / Brezhoneg</option>
+        <option value="cn">Chinese / 汉语</option>
+        <option value="nl">Dutch< / Nederlands/option>
+        <option value="en">English / English</option>
+        <option value="fr">French / français</option>
+        <option value="de">German / Deutsch</option>
+        <option value="hr">Hungarian / magyar nyelv</option>
+        <option value="it">Italian / italiano</option>
+        <option value="ja">Japanese / 日本語</option>
+        <option value="kr">Korean / 한국어</option>
+        <option value="fa">Persian / فارسی</option>
+        <option value="pt">Portuguese / Português</option>
+        <option value="es">Spanish / español</option>
+      </select>
+      <br>
+      Choose the language used for country-name input.  Does not (yet)
+      change the user interface language.
+    </p>
+    <hr>
+    <p>
       Game for specific date:
       <input id="target-game" onchange="dateSet()" type="date">
       <br>
