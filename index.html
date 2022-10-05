@@ -8,7 +8,7 @@
 </head>
 <body>
   <h1>G.L.O.B.E.</h1>
-  <div>
+  <div id="game-name">
     <b>G</b>eo-<b>L</b>ocate
     <b>O</b>bjects
     <b>B</b>efore
@@ -26,15 +26,15 @@
     <datalist id="suggest"></datalist>
   </div>
   <footer>
-    <button id="config">⚙ Options</button>
+    <button id="config">⚙ <span id="options">Options</span></button>
   </footer>
   <div class="modal hidden-modal" id="config-modal">
-    <h1>Configuration</h1>
+    <h1 id="cfg">Configuration</h1>
     <p>
-      <label for="language-select">Choose a language:</label>
+      <label for="language-select" id="lang-label">Choose a language:</label>
       <select id="language-select" name="languages" onchange="updateLanguage()">
-        <option disabled="true" value="">-- Choose a language --"</option>
-        <option value="br">Breton / Brezhoneg</option>
+        <option disabled="true" id="lang-opt" value="">-- Choose a language --"</option>
+        <option style="display: none" value="br">Breton / Brezhoneg</option>
         <option value="cn">Chinese / 汉语</option>
         <option value="nl">Dutch< / Nederlands/option>
         <option value="en">English / English</option>
@@ -49,34 +49,46 @@
         <option value="es">Spanish / español</option>
       </select>
       <br>
-      Choose the language used for country-name input.  Does not (yet)
-      change the user interface language.
+      <span id="language">
+        Choose the language used for country-name input.  Does not (yet)
+        change the user interface language.
+      </span>
     </p>
     <hr>
     <p>
-      Game for specific date:
+      <label for="target-game" id="target-label">
+        Game for specific date:
+      </label>
       <input id="target-game" onchange="dateSet()" type="date">
       <br>
-      You can try a variety of historical games, by choosing a date
-      earlier than today.
+      <span id="date-target">
+        You can try a variety of historical games, by choosing a date
+        earlier than today.
+      </span>
     </p>
     <hr>
     <p>
       <button id="reset-token" onclick="updateGame()">New Game</button>
       <br>
-      Abandon the existing game and replace with something random on
-      reload, by clicking this button.  Note that the game will reset
-      at midnight, so avoid reloading the page, if you&rsquo;re near
-      that point.
+      <span id="reset">
+        Abandon the existing game and replace with something random on
+        reload, by clicking this button.  Note that the game will reset
+        at midnight, so avoid reloading the page, if you&rsquo;re near
+        that point.
+      </span>
     </p>
     <hr>
     <p>
-      <button id="close-config">👍 Looks good</button>
+      <button id="close-config">👍 <span id="close">Looks good</span></button>
     </p>
-    <footer>
-      If you'd like more, you might want to look through the
-      <a href="https://jcolag.github.io/g-l-o-b-e-archives">archived games</a>.
-    </footer>
+    <div>
+      <span id="foot">
+        If you'd like more, you might want to look through the
+      </span>
+      <br>
+      <a href="https://jcolag.github.io/g-l-o-b-e-archives" id="archive">
+        archived games</a>.
+    </div>
   </div>
 </body>
 </html>
