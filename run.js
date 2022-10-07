@@ -341,3 +341,17 @@ function updateLanguage() {
   localStorage.setItem('langSet', lang);
   needRestart = true;
 }
+
+function translate(l) {
+  const xlat = languages[l];
+
+  Object.keys(xlat).forEach((k) => {
+    const widget = document.getElementById(k);
+
+    if (widget === null) {
+      return;
+    }
+
+    widget.innerHTML = xlat[k];
+  });
+}
