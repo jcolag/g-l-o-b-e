@@ -56,6 +56,7 @@ window.addEventListener('load', (e) => {
   const langPick = document.getElementById('language-select');
   const today = new Date().toISOString().split('T')[0];
 
+  translate(lang);
   langPick.value = lang;
   datePick.max = today;
   openConfig.addEventListener(
@@ -131,8 +132,9 @@ function handleInput(event) {
   );
 
   if (guess.length === 0) {
-    guesses.innerHTML += '<div class="error">&ldquo;<b>' +
-      `${input.value}</b>&rdquo; was not recognized as a country.</div>`;
+    guesses.innerHTML += '<div class="error">' +
+      languages[lang]['bad-guess'].replaceAll('xxx', input.value) +
+      '</div>';
     input.value = '';
     return;
   }
@@ -153,9 +155,8 @@ function handleInput(event) {
   if (distanceSoFar > earth && !lostGame) {
     lostGame = true;
     guesses.innerHTML += '<div class="update">' +
-      enemy() +
-      ' The E.N.E.M.Y. agent found the artifact before you did,' +
-      ' but keep playing to find out where.';
+      enemy() + '&nbsp;' +
+      languages[lang]['game-over'];
   }
 
   guesses.innerHTML += '<div class="update">' +
