@@ -34,8 +34,10 @@ const day = Math.floor(Date.now() / 86400000);
 const storedSeed = localStorage.getItem('seed');
 const seedSet = localStorage.getItem('seedSet');
 const langSet = localStorage.getItem('langSet');
+const unitSet = localStorage.getItem('unitSet');
 let needRestart = false;
 let lang = langSet === null ? 'en' : langSet;
+let unit = unitSet === null ? 'mi' : unitSet;
 let when = Object.prototype.hasOwnProperty.call(query, 'date')
   && !Number.isNaN(Date.parse(query['date']))
     ? new Date(query['date'])
@@ -43,6 +45,10 @@ let when = Object.prototype.hasOwnProperty.call(query, 'date')
 
 if (Object.prototype.hasOwnProperty.call(query, 'lang')) {
   lang = query['lang'];
+}
+
+if (Object.prototype.hasOwnProperty.call(query, 'unit')) {
+  lang = query['unit'];
 }
 
 if (when > new Date()) {
