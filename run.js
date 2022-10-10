@@ -1,3 +1,29 @@
+const units = {
+  R: {
+    name: 'Earth Radii',
+    ratio: 3958.75,
+  },
+  f: {
+    name: 'Furlongs',
+    ratio: 0.125,
+  },
+  km: {
+    name: 'Kilometers',
+    ratio: 0.6,
+  },
+  mi: {
+    name: 'Miles',
+    ratio: 1,
+  },
+  l: {
+    name: 'Nautical Leagues',
+    ratio: 3.452,
+  },
+  m: {
+    name: 'Nautical Miles',
+    ratio: 1.151,
+  },
+};
 const earth = 24859.734;
 const detective = '🕵️';
 const zwj = '\u200D';
