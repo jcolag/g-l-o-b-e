@@ -375,6 +375,13 @@ function updateLanguage() {
   needRestart = true;
 }
 
+function updateUnit() {
+  const unitPick = document.getElementById('unit-select');
+  const u = unitPick.value;
+  localStorage.setItem('unitSet', u);
+  needRestart = true;
+}
+
 function translate(l) {
   const xlat = languages[l];
 
