@@ -191,12 +191,15 @@ function handleInput(event) {
       languages[lang]['game-over'];
   }
 
+  const u = units[unit];
+  const dist = Math.floor(miles * 100 / u.ratio) / 100;
+  const total = distanceSoFar / u.ratio;
   guesses.innerHTML += '<div class="update">' +
     `<div class="names">${name}</div>` +
     `<div class="flag">${guess[0].emoji}</div>` +
-    `<div class="distance">${miles}mi</div>` +
+    `<div class="distance">${dist}${unit}</div>` +
     `<div class="direction">${arrow}</div>` +
-    `<div class="total-distance ${dclass}">${distanceSoFar}mi traveled</div>` +
+    `<div class="total-distance ${dclass}">${total} ${u.name} traveled</div>` +
     '</div>';
   input.value = '';
 }
