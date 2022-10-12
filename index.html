@@ -57,6 +57,13 @@
     </p>
     <hr>
     <p>
+      <label for="unit-select" id="unit-label">Choose a Distance Unit:</label>
+      <select id="unit-select" name="units" onchange="updateUnit()">
+        <option disabled="true" id="lang-opt" value="">-- Choose a distance unit --"</option>
+      </select>
+    </p>
+    <hr>
+    <p>
       <label for="target-game" id="target-label">
         Game for specific date:
       </label>
