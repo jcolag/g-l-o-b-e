@@ -86,6 +86,7 @@ window.addEventListener('load', (e) => {
   const closeConfig = document.getElementById('close-config');
   const datePick = document.getElementById('target-game');
   const langPick = document.getElementById('language-select');
+  const unitPick = document.getElementById('unit-select');
   const today = new Date().toISOString().split('T')[0];
 
   translate(lang);
@@ -102,6 +103,14 @@ window.addEventListener('load', (e) => {
       }
     }
   );
+  Object.keys(units).forEach((k) => {
+    const option = document.createElement('option');
+
+    option.value = k;
+    option.text = units[k].name;
+    unitPick.appendChild(option);
+  });
+  unitPick.value = unit;
   fetch('./countries.json')
     .then(readJson);
 });
